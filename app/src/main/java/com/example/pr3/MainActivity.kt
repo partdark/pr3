@@ -10,6 +10,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import org.w3c.dom.Text
 
+
+public var STR : Int = 0
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,9 +20,10 @@ class MainActivity : AppCompatActivity() {
 
         val button : ImageView = findViewById(R.id.imageView)
         val textView : TextView = findViewById(R.id.textView2)
+        textView.text = "${STR}"
 
         button.setOnClickListener {
-            val STR : Int =  textView.getText().toString().toInt() + 1
+            STR = STR + 1
             textView.text = "${STR}"
         }
 
